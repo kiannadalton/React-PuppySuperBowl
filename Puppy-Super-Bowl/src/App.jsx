@@ -3,6 +3,7 @@ import "./App.css";
 import SinglePlayer from "./components/SinglePlayer";
 import AllPlayers from "./components/AllPlayers";
 import CreatePlayer from "./components/CreatePlayer";
+import Information from "./components/Information";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <CreatePlayer />
       <SinglePlayer />
       <AllPlayers />
+      <Information />
     </>
   );
 }
