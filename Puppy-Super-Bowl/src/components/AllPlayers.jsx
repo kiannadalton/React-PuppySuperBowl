@@ -1,17 +1,38 @@
+import { useState } from "react";
 import SearchBar from "./SearchBar";
 import { useGetPlayersQuery } from "../api/api";
 
 export default function AllPlayers({ setSelectedPlayerId }) {
+  const [searchParam, setSearchParam] = useState("");
   const { data, error, isLoading } = useGetPlayersQuery();
-  console.log("players data", data?.data?.players);
+  let playerList = data?.data?.players;
+
+  let message;
+
+  if (isLoading) {
+    message = 'Loading...';
+  }
+  if (error) {
+    message = 'Oh no! There is an error';
+  }
+
+  let playersToDisplay =
+    searchParam && playerList
+      ? playerList.filter((player) =>
+          player.name.toLowerCase().includes(searchParam.toLowerCase())
+        )
+      : playerList;
+
 
   return (
     <div>
       <h2>All Players</h2>
-      <SearchBar />
+      <SearchBar searchParam={searchParam} setSearchParam={setSearchParam} />
+      {isLoading && <p>{message}</p>}
+      {error && <p>{message}</p>}
       <div className="playersContainer">
-        {data?.data &&
-          data?.data?.players.map((player) => (
+        {playersToDisplay&&
+          playersToDisplay.map((player) => (
             <div className="playersCard" key={player.id}>
               <img src={player.imageUrl} alt={player.name} />
 
