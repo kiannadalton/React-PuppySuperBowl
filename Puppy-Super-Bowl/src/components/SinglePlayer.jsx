@@ -20,33 +20,28 @@ export default function SinglePlayer({
   let $details;
 
   if (!selectedPlayerId) {
-    $details = <p>Please select a player</p>;
+    $details = <p>Click See Details on a Player to see more information.</p>;
   } else if (isLoading) {
     $details = <p>Loading puppy information...</p>;
   } else {
     $details = (
       <div className="playersCard" key={player.id}>
         <img src={player.imageUrl} alt={player.name} />
-
         <h3>{player.name}</h3>
         <h4>Player # {player.id} </h4>
         <p>
           Team # {player.teamId === null ? "None at this time" : player.teamId}
         </p>
-
         <p>Breed: {player.breed}</p>
         <p>Status: {player.status}</p>
         <button onClick={() => removePlayer(player.id)}>Delete Player</button>
-        <button onClick={() => setSelectedPlayerId()}>
-          Back to All Players
-        </button>
+        <button onClick={() => setSelectedPlayerId()}>Close</button>
       </div>
     );
   }
 
   return (
     <div className="singlePlayerContainer">
-      <h2>Single Player Card</h2>
       {$details}
     </div>
   );
