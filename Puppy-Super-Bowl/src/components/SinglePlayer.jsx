@@ -36,9 +36,7 @@ export default function SinglePlayer({
 
         <p>Breed: {player.breed}</p>
         <p>Status: {player.status}</p>
-        <button onClick={() => removePlayer(player.id)}>
-          Delete Player
-        </button>
+        <button onClick={() => removePlayer(player.id)}>Delete Player</button>
         <button onClick={() => setSelectedPlayerId()}>
           Back to All Players
         </button>
@@ -46,12 +44,8 @@ export default function SinglePlayer({
     );
   }
 
-  if (error) {
-    console.log(error);
-  }
-
   return (
-    <div>
+    <div className="singlePlayerContainer">
       <h2>Single Player Card</h2>
       {$details}
     </div>

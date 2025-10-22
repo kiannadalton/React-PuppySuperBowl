@@ -8,6 +8,12 @@ h1{
   padding-top: 1rem;
   justify-content: center;
 }
+
+h2 {
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+}
 .playersContainer {
   border: 2px solid white;
   margin: auto;
@@ -67,4 +73,31 @@ img {
   transition: 0.8s;
   background-color: rgba(0, 0, 0, 0.098);
   border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: auto;
+}
+
+form label {
+  margin-left: 25%;
+}
+
+form input {
+  margin: 1rem;
+  width: 50%;
+  background-color: white;
+}
+form button {
+  width: 30%;
+  margin-left: 25%;
+}
+
+.createP {
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
 }
