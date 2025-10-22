@@ -9,20 +9,35 @@ export const api = createApi({
   }),
   tagTypes: ["player"],
   endpoints: (builder) => ({
-    // getPlayers
     getPlayers: builder.query({
       query: () => "/players",
       providesTags: ["player"],
     }),
-    // getSinglePlayer
     getSinglePlayer: builder.query({
       query: ({ id }) => `/players/${id}`,
       providesTags: ["player"],
     }),
-    // addPlayer
-    // deletePlayer
-    
+    addPlayer: builder.mutation({
+      query: (body) => ({
+        url: "/players",
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["player"],
+    }),
+    deletePlayer: builder.mutation({
+      query: ({ id }) => ({
+        url: `/players/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["player"],
+    }),
   }),
 });
 
-export const { useGetPlayersQuery, useGetSinglePlayerQuery } = api;
+export const {
+  useGetPlayersQuery,
+  useGetSinglePlayerQuery,
+  useAddPlayerMutation,
+  useDeletePlayerMutation,
+} = api;
