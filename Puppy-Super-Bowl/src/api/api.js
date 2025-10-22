@@ -10,10 +10,19 @@ export const api = createApi({
   tagTypes: ["player"],
   endpoints: (builder) => ({
     // getPlayers
+    getPlayers: builder.query({
+      query: () => "/players",
+      providesTags: ["player"],
+    }),
     // getSinglePlayer
+    getSinglePlayer: builder.query({
+      query: ({ id }) => `/players/${id}`,
+      providesTags: ["player"],
+    }),
     // addPlayer
     // deletePlayer
+    
   }),
 });
 
-export const {} = api;
+export const { useGetPlayersQuery, useGetSinglePlayerQuery } = api;
