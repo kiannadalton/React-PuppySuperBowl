@@ -32,7 +32,7 @@ export default function AllPlayers() {
         selectedPlayerId={selectedPlayerId}
         setSelectedPlayerId={setSelectedPlayerId}
       />
-      <h2>All Players</h2>
+      <h2 id="allPlayersHeader">All Players</h2>
       <SearchBar searchParam={searchParam} setSearchParam={setSearchParam} />
       {isLoading && <p>{message}</p>}
       {error && <p>{message}</p>}

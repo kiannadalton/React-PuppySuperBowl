@@ -29,11 +29,11 @@ export default function SinglePlayer({
         <img src={player.imageUrl} alt={player.name} />
         <h3>{player.name}</h3>
         <h4>Player # {player.id} </h4>
-        <p>
+        <h4>
           Team # {player.teamId === null ? "None at this time" : player.teamId}
-        </p>
-        <p>Breed: {player.breed}</p>
-        <p>Status: {player.status}</p>
+        </h4>
+        <h4>Breed: {player.breed}</h4>
+        <h4>Status: {player.status}</h4>
         <button onClick={() => removePlayer(player.id)}>Delete Player</button>
         <button onClick={() => setSelectedPlayerId()}>Close</button>
       </div>
