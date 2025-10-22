@@ -1,26 +1,26 @@
 import "./App.css";
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 // components
 import Navbar from "./components/Navbar";
-import SinglePlayer from "./components/SinglePlayer";
+import Home from "./components/Home";
 import AllPlayers from "./components/AllPlayers";
 import CreatePlayer from "./components/CreatePlayer";
 import Information from "./components/Information";
 
 function App() {
-  const [selectedPlayerId, setSelectedPlayerId] = useState();
-
   return (
     <>
-      <h1>Puppy Super Bowl</h1>
       <Navbar />
-      <CreatePlayer />
-      <SinglePlayer
-        selectedPlayerId={selectedPlayerId}
-        setSelectedPlayerId={setSelectedPlayerId}
-      />
-      <AllPlayers setSelectedPlayerId={setSelectedPlayerId} />
-      <Information />
+
+      <h1>Puppy Super Bowl</h1>
+      {/* <AllPlayers setSelectedPlayerId={setSelectedPlayerId} /> */}
+      {/* <Information /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/createplayer" element={<CreatePlayer />} />
+        <Route path="/players" element={<AllPlayers />} />
+        <Route path="/information" element={<Information />} />
+      </Routes>
     </>
   );
 }

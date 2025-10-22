@@ -17,7 +17,7 @@ export const api = createApi({
       query: ({ id }) => `/players/${id}`,
       providesTags: ["player"],
     }),
-    addPlayer: builder.mutation({
+    createPlayer: builder.mutation({
       query: (body) => ({
         url: "/players",
         method: "POST",
@@ -38,6 +38,6 @@ export const api = createApi({
 export const {
   useGetPlayersQuery,
   useGetSinglePlayerQuery,
-  useAddPlayerMutation,
+  useCreatePlayerMutation,
   useDeletePlayerMutation,
 } = api;
