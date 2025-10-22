@@ -1,4 +1,4 @@
-import { useGetSinglePlayerQuery } from "../api/api";
+import { useGetSinglePlayerQuery, useDeletePlayerMutation } from "../api/api";
 
 export default function SinglePlayer({
   selectedPlayerId,
@@ -7,6 +7,14 @@ export default function SinglePlayer({
   const { data, error, isLoading } = useGetSinglePlayerQuery({
     id: selectedPlayerId,
   });
+  const [deletePlayer] = useDeletePlayerMutation();
+
+  function removePlayer(id) {
+    // sends id to useDeletePlayerMutation
+    deletePlayer({ id });
+    //resets selectedPlayerId
+    setSelectedPlayerId();
+  }
 
   let player = data?.data?.player;
   let $details;
@@ -28,7 +36,7 @@ export default function SinglePlayer({
 
         <p>Breed: {player.breed}</p>
         <p>Status: {player.status}</p>
-        <button onClick={() => console.log("Can't get rid of me yet!")}>
+        <button onClick={() => removePlayer(player.id)}>
           Delete Player
         </button>
         <button onClick={() => setSelectedPlayerId()}>
