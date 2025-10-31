@@ -105,9 +105,9 @@ h2 {
   background-color: rgb(162, 195, 197);
 }
 
-.playersCard h3, h4 {
-    background-color: rgb(162, 195, 197);
-
+.playersCard h3,
+h4 {
+  background-color: rgb(162, 195, 197);
 }
 
 .playersCard img {
@@ -118,19 +118,19 @@ h2 {
 }
 
 .playersCard button {
-  margin: .25rem;
-  padding: .2rem .8rem;
+  margin: 0.25rem;
+  padding: 0.2rem 0.8rem;
   border-radius: 5px;
   font-weight: 200;
   background-color: rgb(75, 112, 114);
   color: white;
-  letter-spacing: .08rem;
+  letter-spacing: 0.08rem;
 }
 
 .playersCard button:hover {
   background-color: rgb(37, 54, 55);
   color: white;
-  transition: .8s;
+  transition: 0.8s;
 }
 
 .searchBar {
@@ -154,21 +154,57 @@ form {
 }
 
 form label {
-  margin-left: 25%;
+  margin: 0rem 15%;
 }
 
 form input {
-  margin: 1rem;
-  width: 50%;
+  margin: 1rem 0rem;
+  width: 65%;
   background-color: white;
-}
-form button {
-  width: 30%;
-  margin-left: 25%;
 }
 
 .createP {
   display: flex;
   justify-content: center;
   font-weight: bolder;
+  padding-top: 1rem;
+}
+
+#createTitle {
+  border-bottom: 2px solid black;
+}
+
+.createForm {
+  border-radius: 5px;
+  border: solid 2px rgb(88, 133, 135);
+  background-color: rgb(162, 195, 197);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+label {
+    background-color: rgb(162, 195, 197);
+    font-weight: bold;
+    /* keeps label and input spacing even */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.createForm button {
+  width: 30%;
+  padding: 0.2rem 0.8rem;
+  border-radius: 5px;
+  font-weight: 200;
+  background-color: rgb(75, 112, 114);
+  color: white;
+  letter-spacing: 0.08rem;
+  margin-top: 1.5rem;
+  margin-left: 15%;
+}
+
+.createForm button:hover {
+  background-color: rgb(37, 54, 55);
+  color: white;
+  transition: 0.8s;
 }

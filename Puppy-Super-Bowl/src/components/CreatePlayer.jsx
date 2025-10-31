@@ -42,11 +42,11 @@ export default function CreatePlayer() {
 
   return (
     <div>
-      <h2>Create Player Form</h2>
+      <h2 id="createTitle">Create Player Form</h2>
       {error && <p className="createP">{error}</p>}
       {message && <p className="createP">{message}</p>}
 
-      <form onSubmit={handleSubmit}>
+      <form className="createForm" onSubmit={handleSubmit}>
         <label>
           Player Name:
           <input
