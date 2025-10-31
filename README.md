@@ -2,13 +2,15 @@
 
 This is the React version of the Puppy Super Bowl project, that was previously built using HTML, CSS, and Javascript.
 
+- This is the link to the project board for this project: https://github.com/users/kiannadalton/projects/9
+
 ## Deployed Link
 
-- insert link here
+- reactpuppysuperbowl.netlify.app
 
 ## Demonstrates use of:
 
-React, useState, useEffect, RTK Query, props, React Router, Redux, GET, POST, DELETE
+React, useState, useEffect, RTK Query, props, React Router, React Redux, GET, POST, DELETE, OnSubmit, onClick, Displaying error messages, props, if, preventDefault(), configureStore, createApi, fetchBaseQuery, useQuery, useMutation, middleware, .find, destructuring, CSS
 
 ## The API
 
