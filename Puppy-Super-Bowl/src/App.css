@@ -182,13 +182,13 @@ form input {
   margin-top: 1rem;
 }
 
-label {
-    background-color: rgb(162, 195, 197);
-    font-weight: bold;
-    /* keeps label and input spacing even */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.createForm label {
+  background-color: rgb(162, 195, 197);
+  font-weight: bold;
+  /* keeps label and input spacing even */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .createForm button {
@@ -207,4 +207,34 @@ label {
   background-color: rgb(37, 54, 55);
   color: white;
   transition: 0.8s;
+}
+
+.informationBody {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 0.5rem 2rem 5rem 2rem;
+  background-color: rgb(162, 195, 197);
+  min-height: 100vh;
+}
+
+.informationBody p,
+a {
+  background-color: rgb(162, 195, 197);
+}
+
+.informationBody a {
+  padding-right: 0.25rem;
+}
+
+.informationBody a:hover {
+  font-weight: bolder;
+}
+
+.informationImg {
+  border: 2px black solid;
+  border-radius: 5px;
+  width: 80%;
+  margin: auto;
 }
